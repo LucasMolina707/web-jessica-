@@ -1,46 +1,345 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Centro de Lubricación Bosa | Expertos en Cambio de Aceite y Filtros</title>
+    <meta name="description" content="Especialistas en cambio de aceite, filtros y engrase automotriz en Bosa, Bogotá. Servicio express con lubricantes premium en Class Roma.">
+    <meta name="keywords" content="cambio de aceite Bosa, lubricación automotriz, Bogotá, aceite sintético, filtros de aceite, engrase, Class Roma">
     
-    <title>Centro de Lubricación Bosa | Cambio de Aceite en Bogotá</title>
-    
-    <meta name="description" content="Especialistas en cambio de aceite, filtros y engrase automotriz en Bosa, Bogotá. Servicio express, lubricantes premium y atención profesional." />
-    <meta name="keywords" content="cambio de aceite Bogotá, lubricación automotriz Bosa, aceite sintético precio, filtros de aceite, engrase automotriz" />
-    <meta name="author" content="Centro de Lubricación Bosa" />
-    
-    <link rel="icon" href="https://centrodelubricasion.inglucas.com.co/data/logo.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="https://centrodelubricasion.inglucas.com.co/data/logo.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="https://centrodelubricasion.inglucas.com.co/data/logo.png" />
-    
-    <meta property="og:title" content="Centro de Lubricación Bosa" />
-    <meta property="og:description" content="Cambio de aceite y engrase automotriz en Bosa, Bogotá. Servicio rápido y profesional." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://centrodelubricasion.inglucas.com.co/" />
-    <meta property="og:image" content="https://centrodelubricasion.inglucas.com.co/data/seow.png" />
-    <meta property="og:image:secure_url" content="https://centrodelubricasion.inglucas.com.co/data/seow.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Centro de Lubricación Bosa" />
-    <meta name="twitter:description" content="Cambio de aceite y engrase automotriz en Bosa." />
-    <meta name="twitter:image" content="https://centrodelubricasion.inglucas.com.co/data/logo.png" />
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/react-app/main.tsx"></script>
-    <!-- AOS Animation Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  </body>
+    <meta property="og:title" content="Centro de Lubricación Bosa">
+    <meta property="og:description" content="Protege tu motor con los expertos. Cambio de aceite y engrase profesional en Bogotá.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://centrodelubricasion.inglucas.com.co/">
+    <meta property="og:image" content="https://centrodelubricasion.inglucas.com.co/data/seow.png">
+
+    <link rel="icon" href="https://centrodelubricasion.inglucas.com.co/data/logo.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://centrodelubricasion.inglucas.com.co/data/logo.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1D3A7A; /* Azul Profundo */
+            --accent: #EBDC00;  /* Amarillo Brillante */
+            --industrial: #8E919D; /* Gris Industrial */
+            --white: #FFFFFF;
+            --black: #121212;
+            --overlay: rgba(29, 58, 122, 0.92);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--white);
+            line-height: 1.6;
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('https://centrodelubricasion.inglucas.com.co/data/seow.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1, h2, h3, .logo-text { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* HEADER */
+        .main-header {
+            background: rgba(18, 18, 18, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .main-logo { height: 60px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); }
+        .logo-text { font-size: 1.2rem; font-weight: 800; color: var(--white); }
+        .logo-text span { color: var(--accent); }
+
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links a { 
+            color: var(--white); 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; }
+        .hero-tagline { 
+            background: var(--accent); 
+            color: var(--black); 
+            display: inline-block; 
+            padding: 5px 20px; 
+            font-weight: 800;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .hero-content p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px; }
+
+        /* BUTTONS */
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s transform ease;
+            cursor: pointer;
+        }
+        .btn:hover { transform: translateY(-3px); }
+        .btn-primary { background: var(--accent); color: var(--black); margin-right: 15px; }
+        .btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); }
+
+        /* SECTIONS */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; }
+        .section-title::after {
+            content: ''; display: block; width: 80px; height: 4px; background: var(--accent); margin: 15px auto;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+        .card:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--accent); }
+        .card i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
+        .card h3 { margin-bottom: 15px; }
+
+        /* LOCATION AREA */
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            background: var(--white);
+            color: var(--black);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .map-container iframe { width: 100%; height: 100%; min-height: 400px; }
+        .location-info { padding: 40px; }
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+        .info-item i { color: var(--primary); font-size: 1.5rem; }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        footer {
+            background: var(--black);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--industrial);
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links, .cta-button-header { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .location-grid { grid-template-columns: 1fr; }
+            .hero-btns .btn { width: 100%; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="https://wa.me/573132647474" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<header class="main-header">
+    <nav class="container">
+        <div class="logo-container">
+            <img src="https://centrodelubricasion.inglucas.com.co/data/logo.png" alt="Logo" class="main-logo">
+            <span class="logo-text">Centro de Lubricación <span>BOSA</span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#servicios">SERVICIOS</a></li>
+            <li><a href="#beneficios">BENEFICIOS</a></li>
+            <li><a href="#ubicacion">UBICACIÓN</a></li>
+        </ul>
+        <a href="https://wa.me/573132647474?text=Hola,%20quiero%20agendar%20un%20servicio%20de%20lubricación." class="btn btn-primary cta-button-header" style="padding: 10px 20px; font-size: 0.8rem;">AGENDAR CITA</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="container hero-content" data-aos="fade-up">
+        <h1>MÁXIMA PROTECCIÓN <br>PARA TU MOTOR</h1>
+        <p class="hero-tagline">CAMBIO DE ACEITE • FILTROS • ENGRASE</p>
+        <p>Servicio profesional y rápido adaptado a la exigencia del tráfico de Bogotá. Utilizamos tecnología de precisión y lubricantes certificados.</p>
+        <div class="hero-btns">
+            <a href="tel:+573132647474" class="btn btn-primary"><i class="fas fa-phone"></i> LLAMAR AHORA</a>
+            <a href="#ubicacion" class="btn btn-secondary"><i class="fas fa-map-marker-alt"></i> ¿CÓMO LLEGAR?</a>
+        </div>
+    </div>
+</section>
+
+<section id="beneficios" class="benefits">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-right">Por qué elegirnos</h2>
+        <div class="grid-3">
+            <div class="card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-microchip"></i>
+                <h3>Precisión Total</h3>
+                <p>Equipos modernos para drenado y llenado exacto según el manual de tu vehículo.</p>
+            </div>
+            <div class="card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-oil-can"></i>
+                <h3>Marcas Premium</h3>
+                <p>Solo trabajamos con lubricantes certificados: sintéticos y semisintéticos de alta gama.</p>
+            </div>
+            <div class="card" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-bolt"></i>
+                <h3>Servicio Express</h3>
+                <p>Entendemos tu tiempo. Procesos optimizados para que regreses pronto a la vía.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="servicios" class="services" style="background: rgba(0,0,0,0.3);">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-left">Servicios Especializados</h2>
+        <div class="grid-3">
+            <div class="card" data-aos="fade-up">
+                <i class="fas fa-tools"></i>
+                <h3>Cambio de Aceite</h3>
+                <p>Protección térmica superior y limpieza interna del motor para mayor vida útil.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-filter"></i>
+                <h3>Filtros de Aire y Aceite</h3>
+                <p>Garantizamos un flujo óptimo y aire puro para una combustión eficiente.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-grease-gun"></i>
+                <h3>Engrase Automotriz</h3>
+                <p>Eliminación de ruidos y protección de juntas en partes móviles del chasis.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="ubicacion">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Encuéntranos en Bosa</h2>
+        <div class="location-grid" data-aos="zoom-in">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1769922804706!6m8!1m7!1sEuz2pPeWDk4qR7k8etQtQw!2m2!1d4.614424071110363!2d-74.17573432577927!3f196.4838393496015!4f3.964948345920419!5f0.7820865974627469" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="location-info">
+                <h3>Contacto Directo</h3>
+                <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd;">
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <div>
+                        <strong>Dirección:</strong><br>
+                        56 Sur2 Cra. 80a Class Roma, Bosa
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Horarios de Atención:</strong><br>
+                        Lun - Sáb: 06:00 AM - 06:00 PM<br>
+                        Dom - Fest: 08:00 AM - 01:00 PM
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Teléfono:</strong><br>
+                        +57 313 264 7474
+                    </div>
+                </div>
+
+                <a href="https://maps.app.goo.gl/BjnMH91WBmbe1TvA7" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">
+                    <i class="fas fa-directions"></i> INICIAR GPS (GOOGLE MAPS)
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <img src="https://centrodelubricasion.inglucas.com.co/data/logo.png" alt="Logo Footer" style="height: 50px; margin-bottom: 20px;">
+        <p><strong>CENTRO DE LUBRICACIÓN BOSA</strong></p>
+        <p style="color: var(--industrial); font-size: 0.9rem; margin-top: 10px;">
+            Expertos en mantenimiento preventivo automotriz en Bogotá. <br>
+            &copy; 2026 - Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Inicializar animaciones de scroll
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+
+    // Smooth scroll para navegación interna
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
 </html>
